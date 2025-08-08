@@ -421,6 +421,138 @@
             .about-image {
                 margin: 0 auto;
             }
+
+            /* Tambahan untuk navigasi */
+            nav {
+                padding: 1rem 0;
+            }
+
+            .logo {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(10, 25, 47, 0.95);
+                display: none; /* Sembunyikan secara default */
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex; /* Tampilkan saat aktif */
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            /* Tombol hamburger menu */
+            .hamburger {
+                display: block; /* Tampilkan tombol hamburger */
+                cursor: pointer;
+                padding: 0 1rem;
+                z-index: 101;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: var(--light);
+                margin: 5px;
+                transition: all 0.3s ease;
+            }
+
+            /* Animasi hamburger */
+            .hamburger.active .bar1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .bar2 {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            /* Penyesuaian ukuran font dan padding untuk mobile */
+            h1 {
+                font-size: clamp(2rem, 10vw, 3.5rem);
+            }
+
+            h2 {
+                font-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+
+            h2::after {
+                width: 150px; /* Perkecil garis bawah h2 */
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 0 1rem; /* Kurangi padding container */
+            }
+
+            #hero {
+                padding-top: 8rem; /* Sesuaikan padding atas hero section */
+            }
+
+            .hero-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr; /* Satu kolom untuk daftar skill */
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr; /* Satu kolom untuk project card */
+            }
+
+            .project-card {
+                margin: 0 auto;
+                max-width: 350px; /* Batasi lebar project card */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+            }
+
+            .contact-description {
+                font-size: 0.9rem;
+            }
+
+            .contact-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -428,6 +560,11 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">Ezer Website</div>
+        <div class="hamburger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Prestasi</a></li>
@@ -573,7 +710,25 @@
                 });
             });
         });
+
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close nav menu when a link is clicked (for mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
