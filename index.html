@@ -84,8 +84,8 @@
         /* Navigation */
         nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: space-between; /* Memastikan logo dan nav-links berada di sisi yang berbeda */
+            align-items: center; /* Pusatkan konten secara vertikal */
             padding: 2rem 0;
             position: fixed;
             top: 0;
@@ -106,6 +106,7 @@
         .nav-links {
             display: flex;
             list-style: none;
+            margin-right: 2rem; /* Memberikan jarak di sebelah kanan */
         }
 
         .nav-links li {
@@ -133,13 +134,28 @@
             counter-increment: list-item;
         }
 
-        /* Hero Section */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 6rem;
-        }
+        /* Banner Styles */
+        .banner {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 2rem; /* jarak dari navbar */
+}
+
+.banner img {
+    width: auto;
+    max-width: 100%;
+    height: 200px; /* dibesarkan dari 150px */
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 2rem; /* jarak ke banner */
+}
+
 
         .hero-content {
             display: flex;
@@ -560,17 +576,16 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">Ezer Website</div>
-        <div class="hamburger">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Prestasi</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <div class="banner">
+        <img src="EZer.png" alt="Banner Image" />
+    </div>
 
     <!-- Hero Section -->
     <section id="hero">
@@ -630,7 +645,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://rosenmanmanihuruk.blogspot.com/2015/10/ezer-twopama-manihuruk-juara-i-lomba_29.html" target="_blank" class="project-link">Lihat Berita</a>
-                            <a href="https://www.youtube.com/watch?v=tIMIo9MmBQo" target="_blank" class="project-link">Lihat Video</a>
+                                                <a href="https://www.youtube.com/watch?v=tIMIo9MmBQo" target="_blank" class="project-link">Lihat Video</a>
                         </div>
                     </div>
                 </div>
@@ -642,7 +657,7 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Juara Harapan 2 Lomba Band</h3>
-                        <p class="project-description">Ditahun 2025 Saya mendapatkan Juara Harapan 2 pada Lomba Band yang digelar oleh DInas Pariwisata dan Kebudayaan Kota Jambi. Saya memenangkan Lomba tersebut bersama Band Oppunk Generation.</p>
+                        <p class="project-description">Ditahun 2025 Saya mendapatkan Juara Harapan 2 pada Lomba Band yang digelar oleh Dinas Pariwisata dan Kebudayaan Kota Jambi. Saya memenangkan Lomba tersebut bersama Band Oppunk Generation.</p>
                         <div class="project-tech">
                             <span>Band</span>
                             <span>Kota</span>
@@ -662,7 +677,7 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Juara 1 Lomba Band</h3>
-                        <p class="project-description">Di Awal Tahun 2025 Saya juga Mendapatkan Juara 1 pada Lomba Band Unico Fest yang diadakan oleh Cafe Unico Jambi. Saya memnangkan Lomba Band ini bersama Band Oppunk Generation, yang dimana pada waktu itu Saya Bermain Bass</p>
+                        <p class="project-description">Di Awal Tahun 2025 Saya juga Mendapatkan Juara 1 pada Lomba Band Unico Fest yang diadakan oleh Cafe Unico Jambi. Saya memenangkan Lomba Band ini bersama Band Oppunk Generation, yang dimana pada waktu itu Saya Bermain Bass.</p>
                         <div class="project-tech">
                             <span>Band</span>
                             <span>Oppunk Generation</span>
@@ -683,7 +698,7 @@
         <div class="container">
             <p class="hero-subtitle">Lihat Sosial Media</p>
             <h2 class="contact-title">Sosial Media Ezer</h2>
-            <p class="contact-description">Terhubung dengan Saya di Akun Media Soial yang saya Miliki, Klik dibagian Bawah yaa. Terimakasih, Diateitupa, Horas!!!</p>
+            <p class="contact-description">Terhubung dengan Saya di Akun Media Sosial yang saya Miliki, Klik dibagian Bawah yaa. Terimakasih, Diateitupa, Horas!!!</p>
             <a href="https://www.instagram.com/ezer_manihuruk" target="_blank" class="contact-btn">Say Hello</a>
         </div>
     </section>
